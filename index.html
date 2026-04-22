@@ -165,38 +165,39 @@
   }
   .section-header {
     padding: 32px 0 24px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .back-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    color: var(--gold);
+    color: var(--text);
     cursor: pointer;
     margin-bottom: 16px;
-    padding: 8px 14px;
-    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 999px;
     letter-spacing: 1px;
-    background: transparent;
+    background: rgba(255,255,255,0.03);
     transition: all 0.2s;
   }
   .back-btn:hover { opacity: 1; background: rgba(212,179,102,0.08); }
   .section-title {
-    font-family: "PingFang SC", "Noto Serif SC", serif;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     font-size: 22px;
-    color: var(--gold-light);
+    font-weight: 800;
+    color: #e8a73a;
     letter-spacing: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     text-align: center;
   }
   .section-subtitle {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
     letter-spacing: 1px;
     text-align: center;
+    margin-bottom: 12px;
   }
   .info-box {
     background: rgba(201,168,76,0.06);
@@ -234,19 +235,19 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
-    color: var(--gold);
-    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #e8a73a;
+    letter-spacing: 1px;
     margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    border-bottom: none;
   }
-  .hotel-list { display: flex; flex-direction: column; gap: 8px; }
+  .hotel-list { display: flex; flex-direction: column; gap: 0; }
   .hotel-item {
-    background: var(--dark2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    padding: 6px 0;
     font-size: 14px;
     color: var(--text);
     display: flex;
@@ -255,33 +256,30 @@
   }
   .brand-group { margin-bottom: 24px; }
   .brand-header {
-    background: linear-gradient(135deg, var(--dark2), var(--dark3));
-    border: 1px solid var(--border);
-    border-radius: 10px 10px 0 0;
-    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    padding: 14px 0 10px;
   }
   .brand-header h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--gold-light);
+    font-size: 15px;
+    font-weight: 700;
+    color: #e8a73a;
     letter-spacing: 1px;
   }
-  .brand-header p { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .brand-header p { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: inline; }
   .brand-hotels {
-    background: var(--dark2);
-    border: 1px solid var(--border);
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
+    background: transparent;
+    border: none;
+    border-radius: 0;
   }
   .brand-hotel-item {
-    padding: 11px 16px;
-    font-size: 13px;
+    padding: 6px 0;
+    font-size: 14px;
     color: var(--text);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
   .brand-hotel-item:last-child { border-bottom: none; }
   .cta-box {
