@@ -9,17 +9,19 @@
     --gold: #d4b366;
     --gold-light: #f0d78c;
     --gold-dark: #c9a84c;
-    --dark: #0a1220;
-    --dark2: #141c2a;
-    --dark3: #1e2636;
-    --card-bg: linear-gradient(145deg, #1a2332, #151d2b);
+    --dark: #0c1e3a;
+    --dark-deep: #081428;
+    --dark2: #0f2340;
+    --dark3: #1a2e4d;
+    --card-bg: linear-gradient(145deg, #152a48, #0f2340);
     --text: #f0ead6;
     --text-muted: #8b93a8;
     --border: rgba(212,179,102,0.18);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: var(--dark);
+    background: linear-gradient(180deg, #0c1e3a 0%, #081428 100%);
+    background-attachment: fixed;
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
     min-height: 100vh;
@@ -30,8 +32,8 @@
     position: fixed;
     inset: 0;
     background:
-      radial-gradient(ellipse at 20% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 100%, rgba(201,168,76,0.05) 0%, transparent 60%);
+      radial-gradient(ellipse at 20% 0%, rgba(212,179,102,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(212,179,102,0.08) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
   }
@@ -60,16 +62,17 @@
   }
   .header h1 {
     font-family: "PingFang SC", "Noto Serif SC", serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: 6px;
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 8px;
     margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
   }
-  .header h1 .accent { color: var(--gold); }
+  .header h1 .accent { color: #f0c75a; }
   .header-sub {
     font-size: 13px;
-    color: var(--text-muted);
+    color: #c5cee0;
     letter-spacing: 3px;
   }
   /* Main menu */
@@ -115,11 +118,11 @@
   .menu-card:hover::before, .menu-card:active::before { opacity: 1; }
   .menu-icon { font-size: 32px; line-height: 1; margin-bottom: 4px; }
   .menu-text h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    font-size: 17px;
+    font-weight: 800;
+    color: #f5cf6c;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
   }
   .menu-chip {
     display: inline-flex;
@@ -135,19 +138,28 @@
     letter-spacing: 0.5px;
     margin-bottom: 6px;
   }
-  .menu-text p {
+  .menu-text p, .menu-text .desc {
     font-size: 12.5px;
-    color: var(--text-muted);
-    line-height: 1.8;
+    color: #b8c2d8;
+    line-height: 1.85;
     margin: 0;
+  }
+  .menu-text .desc {
+    margin-top: 4px;
+    padding: 10px 12px;
+    background: rgba(8,20,40,0.5);
+    border: 1px solid rgba(212,179,102,0.15);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
   /* Home footer hint */
   .home-hint {
     text-align: center;
-    padding: 28px 0 10px;
+    padding: 32px 0 10px;
     font-size: 13px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
+    color: #b8c2d8;
+    letter-spacing: 2px;
   }
   /* Section (detail pages) */
   .section { display: none; animation: fadeIn 0.3s ease; }
@@ -345,28 +357,28 @@
         <div class="menu-text">
           <h3>东南亚协议价跑腿</h3>
           <span class="menu-chip">✦ 更多专属服务</span>
-          <p>新加坡·马来西亚·泰国<br>希尔顿/万豪/凯悦 官网<br>7-8折</p>
+          <div class="desc">新加坡·马来西亚·泰国<br>希尔顿/万豪/凯悦 官网<br>7-8折</div>
         </div>
       </div>
       <div class="menu-card" onclick="show('anantara')">
         <div class="menu-icon">🏝️</div>
         <div class="menu-text">
           <h3>安纳塔拉优势资源</h3>
-          <p>全球12家精选<br>泰国·印尼·迪拜·新西兰</p>
+          <div class="desc">全球12家精选<br>泰国·印尼·迪拜·新西兰</div>
         </div>
       </div>
       <div class="menu-card" onclick="show('hoshino')">
         <div class="menu-icon">⛰️</div>
         <div class="menu-text">
           <h3>日本星野集团</h3>
-          <p>虹夕诺雅·界·RISONARE<br>TOMAMU云海露台</p>
+          <div class="desc">虹夕诺雅·界·RISONARE<br>TOMAMU云海露台</div>
         </div>
       </div>
       <div class="menu-card" onclick="show('marriott')">
         <div class="menu-icon">🏨</div>
         <div class="menu-text">
           <h3>万豪优势酒店</h3>
-          <p>全球30+家顶奢品牌<br>客名入住·提前一天预定</p>
+          <div class="desc">全球30+家顶奢品牌<br>客名入住·提前一天预定</div>
         </div>
       </div>
     </div>
