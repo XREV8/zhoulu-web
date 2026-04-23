@@ -210,9 +210,8 @@
   .info-box strong { color: var(--gold-light); }
   .info-box .highlight {
     display: inline-block;
-    background: rgba(255,201,74,0.18);
-    color: var(--gold-light);
-    padding: 2px 8px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: var(--dark-deep);    padding: 2px 8px;
     border-radius: 4px;
     font-weight: 600;
   }
@@ -304,6 +303,15 @@
     vertical-align: middle;
   }
   /* Service boxes (more services section) */
+  .service-section {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 16px 16px;
+      margin-bottom: 20px;
+  }
+  .service-section .service-title { margin-top: 12px; }
+  .service-section .cta-box { margin-bottom: 4px; }
   .service-title {
     font-size: 15px;
     color: var(--gold-light);
@@ -398,7 +406,7 @@
       ◆ 全球<strong>都喜天丽</strong>特价代订，客名入住
     </div>
 
-    <div class="service-title">更多专属服务</div>
+    <div class="service-section"><div class="service-title">更多专属服务</div>
     <div class="service-box">
       <span class="icon">🌐</span>
       <div><strong>一手跑房</strong> + <strong>全球房费代付</strong> 特价酒店</div>
@@ -410,6 +418,7 @@
     <div class="cta-box">
       <div class="cta-icon">📲</div>
       <p>有需求欢迎私信 · 注明目的地 · 入住日期 · 房型需求</p>
+    </div>
     </div>
   </div>
 <!-- ANANTARA -->
@@ -463,8 +472,7 @@
     <div class="cta-box">
       <div class="cta-icon">📲</div>
       <p>有需求欢迎私信 · 注明目的地 · 入住日期 · 房型需求</p>
-    </div>
-  </div>
+    </div>  </div>
 
   <!-- HOSHINO -->
   <div id="hoshino" class="section">
@@ -538,8 +546,7 @@
     <div class="cta-box">
       <div class="cta-icon">📲</div>
       <p>有需求欢迎私信 · 注明目的地 · 入住日期 · 房型需求</p>
-    </div>
-  </div>
+    </div>  </div>
 
   <!-- MARRIOTT -->
   <div id="marriott" class="section">
@@ -741,8 +748,7 @@
     <div class="cta-box">
       <div class="cta-icon">📲</div>
       <p>有需求欢迎私信 · 注明目的地 · 入住日期 · 房型需求</p>
-    </div>
-  </div>
+    </div>  </div>
 
 
 </div>
