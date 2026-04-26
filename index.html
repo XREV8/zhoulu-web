@@ -406,6 +406,149 @@
       color: var(--text-muted);
       letter-spacing: 1px;
     }
+    /* ===== Password modals ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 12, 28, 0.78);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+      animation: fadeIn 0.18s ease;
+    }
+    .modal-overlay.active { display: flex; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes shake { 10%,90%{transform:translateX(-2px);} 20%,80%{transform:translateX(3px);} 30%,50%,70%{transform:translateX(-5px);} 40%,60%{transform:translateX(5px);} }
+    .modal-card {
+      width: 100%;
+      max-width: 380px;
+      background: linear-gradient(160deg, #1a3560, #102441);
+      border: 1px solid rgba(255, 201, 74, 0.35);
+      border-radius: 14px;
+      padding: 24px 22px 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 14px;
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      border: none; background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      border-radius: 6px;
+      transition: 0.15s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+    .modal-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .modal-subtitle {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .modal-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255, 201, 74, 0.25);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+      letter-spacing: 1px;
+      outline: none;
+      transition: 0.15s;
+      font-family: inherit;
+    }
+    .modal-input:focus { border-color: var(--gold); background: rgba(255, 201, 74, 0.05); }
+    .modal-input.error { border-color: #ff7a7a; animation: shake 0.4s; }
+    .modal-field { margin-bottom: 12px; }
+    .modal-field-label {
+      font-size: 12px; color: var(--text-muted);
+      letter-spacing: 1px; margin-bottom: 6px; display: block;
+    }
+    .modal-msg { font-size: 12.5px; min-height: 18px; margin: 4px 0 12px; letter-spacing: 0.5px; }
+    .modal-msg.err { color: #ff8a8a; }
+    .modal-msg.ok { color: #7ad6a8; }
+    .modal-msg.info { color: var(--text-muted); }
+    .modal-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+      color: var(--dark-deep);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.15s;
+      font-family: inherit;
+    }
+    .modal-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255, 201, 74, 0.3); }
+    .modal-btn:disabled { opacity: 0.5; cursor: wait; }
+    .modal-btn.secondary {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .modal-btn.secondary:hover { color: var(--gold-light); border-color: rgba(255, 201, 74, 0.35); }
+    .modal-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-align: center;
+      width: 100%;
+      padding: 6px;
+    }
+    .modal-link:hover { color: var(--gold); }
+    .modal-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 16px 0; }
+    .modal-section-title {
+      font-size: 13px; color: var(--gold-light);
+      letter-spacing: 1.5px; margin-bottom: 10px; font-weight: 700;
+    }
+    .modal-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+    .modal-tab {
+      flex: 1; padding: 8px; text-align: center;
+      font-size: 12px; letter-spacing: 1px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      cursor: pointer; color: var(--text-muted);
+      transition: 0.15s; background: transparent;
+      font-family: inherit;
+    }
+    .modal-tab.active { color: var(--gold); border-color: rgba(255, 201, 74, 0.5); background: rgba(255, 201, 74, 0.06); }
+    .modal-pane { display: none; }
+    .modal-pane.active { display: block; }
+    .modal-token-warn {
+      background: rgba(255, 201, 74, 0.08);
+      border: 1px solid rgba(255, 201, 74, 0.3);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+    }
+
 </style>
 </head>
 <body>
@@ -487,17 +630,17 @@
     </div>
     <div class="service-section">
       <div class="service-title">更多酒店</div>
-      <div class="service-box brand-entry" onclick="show('hilton-list')">
+      <div class="service-box brand-entry" onclick="tryUnlock('hilton-list')">
         <span class="icon">🏨</span>
         <div><strong>希尔顿酒店精选</strong></div>
         <span class="brand-arrow">›</span>
       </div>
-      <div class="service-box brand-entry" onclick="show('hyatt-list')">
+      <div class="service-box brand-entry" onclick="tryUnlock('hyatt-list')">
         <span class="icon">🏨</span>
         <div><strong>凯悦酒店精选</strong></div>
         <span class="brand-arrow">›</span>
       </div>
-      <div class="service-box brand-entry" onclick="show('dusit-list')">
+      <div class="service-box brand-entry" onclick="tryUnlock('dusit-list')">
         <span class="icon">🏨</span>
         <div><strong>都喜天丽酒店精选</strong></div>
         <span class="brand-arrow">›</span>
@@ -1101,6 +1244,91 @@
       <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
     </div>
   </div>
+  <!-- ===== Password Unlock Modal ===== -->
+  <div id="unlock-modal" class="modal-overlay" onclick="if(event.target===this)closeUnlock()">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeUnlock()" aria-label="close">×</button>
+      <div class="modal-title">🔒 需要密码查看</div>
+      <div class="modal-subtitle">请联系账号获取查看密码</div>
+      <div class="modal-field">
+        <input id="unlock-input" type="password" class="modal-input" placeholder="请输入查看密码" autocomplete="off" />
+      </div>
+      <div id="unlock-msg" class="modal-msg info">&nbsp;</div>
+      <button type="button" class="modal-btn" onclick="submitUnlock()">解锁</button>
+      <span class="modal-link" onclick="openAdmin()">🔐 管理员：修改密码</span>
+    </div>
+  </div>
+
+  <!-- ===== Admin Modal ===== -->
+  <div id="admin-modal" class="modal-overlay" onclick="if(event.target===this)closeAdmin()">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeAdmin()" aria-label="close">×</button>
+      <div class="modal-title">🔐 管理员面板</div>
+      <div class="modal-subtitle">仅授权人员可修改</div>
+      <div id="admin-token-warn" class="modal-token-warn" style="display:none">
+        ⚠️ 未检测到 GitHub Token，请先在下方“Token 设置”选项卡中录入。
+      </div>
+      <div class="modal-tabs">
+        <button type="button" class="modal-tab active" data-pane="pane-view" onclick="switchPane('pane-view')">查看密码</button>
+        <button type="button" class="modal-tab" data-pane="pane-admin" onclick="switchPane('pane-admin')">管理员密码</button>
+        <button type="button" class="modal-tab" data-pane="pane-token" onclick="switchPane('pane-token')">Token 设置</button>
+      </div>
+
+      <div id="pane-view" class="modal-pane active">
+        <div class="modal-section-title">修改查看密码</div>
+        <div class="modal-field">
+          <label class="modal-field-label">管理员密码</label>
+          <input id="rv-admin" type="password" class="modal-input" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">新查看密码</label>
+          <input id="rv-new" type="text" class="modal-input" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">确认新查看密码</label>
+          <input id="rv-new2" type="text" class="modal-input" autocomplete="off" />
+        </div>
+        <div id="rv-msg" class="modal-msg info">&nbsp;</div>
+        <button type="button" class="modal-btn" onclick="rotateView()">提交修改</button>
+      </div>
+
+      <div id="pane-admin" class="modal-pane">
+        <div class="modal-section-title">修改管理员密码</div>
+        <div class="modal-field">
+          <label class="modal-field-label">当前管理员密码</label>
+          <input id="ra-cur" type="password" class="modal-input" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">新管理员密码</label>
+          <input id="ra-new" type="password" class="modal-input" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">确认新管理员密码</label>
+          <input id="ra-new2" type="password" class="modal-input" autocomplete="off" />
+        </div>
+        <div id="ra-msg" class="modal-msg info">&nbsp;</div>
+        <button type="button" class="modal-btn" onclick="rotateAdmin()">提交修改</button>
+      </div>
+
+      <div id="pane-token" class="modal-pane">
+        <div class="modal-section-title">GitHub Token</div>
+        <div class="modal-token-warn">
+          该 Token 仅保存在本设备浏览器中，不会上传。需在 GitHub 生成 fine-grained PAT，权限仅勾 Contents：Read and write，仓库仅选 zhoulu-web。
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">管理员密码（验证身份）</label>
+          <input id="rt-admin" type="password" class="modal-input" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label class="modal-field-label">GitHub Token (ghp_... 或 github_pat_...)</label>
+          <input id="rt-token" type="password" class="modal-input" autocomplete="off" placeholder="粘贴或重新输入 Token" />
+        </div>
+        <div id="rt-msg" class="modal-msg info">&nbsp;</div>
+        <button type="button" class="modal-btn" onclick="saveToken()">保存到本设备</button>
+        <button type="button" class="modal-btn secondary" style="margin-top:8px" onclick="clearToken()">从本设备清除 Token</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   function show(id) {
@@ -1114,6 +1342,182 @@
       window.scrollTo(0, 0);
     }
   }
+  /* ===== Auth + password rotation ===== */
+  const AUTH_CFG = {
+    viewSalt: "a64f57610ce77be7",
+    viewHash: "0e3cc643f295ffbcbea83c0696d8b013f190bbcce388f8ae46f57048a3b7ba08",
+    adminSalt: "9c4411c87fc44c70",
+    adminHash: "b684563dff3659abdb80ddc47fb8a9f6354305d1e85b5e39a19a656444e06f44"
+  };
+  const REPO_OWNER = "xrev8";
+  const REPO_NAME = "zhoulu-web";
+  const REPO_PATH = "index.html";
+  const REPO_BRANCH = "main";
+  const UNLOCK_DAYS = 30;
+  const LS_UNLOCK = "zhoulu_unlock_until";
+  const LS_TOKEN  = "zhoulu_gh_pat";
+  let pendingTarget = null;
+
+  async function sha256Hex(s){
+    const buf = new TextEncoder().encode(s);
+    const h = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(h)).map(x=>x.toString(16).padStart(2,"0")).join("");
+  }
+  async function checkPw(pw, salt, hash){ return (await sha256Hex(salt+":"+pw)) === hash; }
+  function isUnlocked(){
+    const until = parseInt(localStorage.getItem(LS_UNLOCK)||"0", 10);
+    return until > Date.now();
+  }
+  function setUnlocked(){
+    localStorage.setItem(LS_UNLOCK, String(Date.now() + UNLOCK_DAYS*86400000));
+  }
+
+  /* called from brand-entry onclick */
+  function tryUnlock(targetId){
+    if (isUnlocked()){ show(targetId); return; }
+    pendingTarget = targetId;
+    document.getElementById("unlock-modal").classList.add("active");
+    setTimeout(()=>{ const i=document.getElementById("unlock-input"); i.value=""; i.focus(); }, 50);
+    setMsg("unlock-msg", "", "info");
+  }
+  function closeUnlock(){
+    document.getElementById("unlock-modal").classList.remove("active");
+    pendingTarget = null;
+  }
+  async function submitUnlock(){
+    const v = (document.getElementById("unlock-input").value||"").trim();
+    const inp = document.getElementById("unlock-input");
+    if (!v){ inp.classList.add("error"); setMsg("unlock-msg","请输入密码","err"); return; }
+    const ok = await checkPw(v, AUTH_CFG.viewSalt, AUTH_CFG.viewHash);
+    if (!ok){ inp.classList.add("error"); setMsg("unlock-msg","密码错误，请重试","err"); setTimeout(()=>inp.classList.remove("error"), 500); return; }
+    setUnlocked();
+    const target = pendingTarget;
+    closeUnlock();
+    if (target) show(target);
+  }
+
+  function setMsg(id, text, type){
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = text || " ";
+    el.className = "modal-msg " + (type||"info");
+  }
+
+  /* admin modal */
+  function openAdmin(){
+    document.getElementById("unlock-modal").classList.remove("active");
+    document.getElementById("admin-modal").classList.add("active");
+    refreshTokenWarn();
+    switchPane("pane-view");
+    ["rv-admin","rv-new","rv-new2","ra-cur","ra-new","ra-new2","rt-admin","rt-token"].forEach(id=>{ const e=document.getElementById(id); if(e) e.value=""; });
+    ["rv-msg","ra-msg","rt-msg"].forEach(id=>setMsg(id,"","info"));
+  }
+  function closeAdmin(){ document.getElementById("admin-modal").classList.remove("active"); }
+  function switchPane(id){
+    document.querySelectorAll(".modal-tab").forEach(t=>t.classList.toggle("active", t.dataset.pane===id));
+    document.querySelectorAll(".modal-pane").forEach(p=>p.classList.toggle("active", p.id===id));
+  }
+  function refreshTokenWarn(){
+    const has = !!localStorage.getItem(LS_TOKEN);
+    const w = document.getElementById("admin-token-warn");
+    if (w) w.style.display = has ? "none" : "block";
+  }
+
+  /* token mgmt */
+  async function saveToken(){
+    const adminPw = document.getElementById("rt-admin").value;
+    const tok = (document.getElementById("rt-token").value||"").trim();
+    if (!(await checkPw(adminPw, AUTH_CFG.adminSalt, AUTH_CFG.adminHash))){ setMsg("rt-msg","管理员密码错误","err"); return; }
+    if (!/^(ghp_|github_pat_)/.test(tok)){ setMsg("rt-msg","Token 格式不对","err"); return; }
+    localStorage.setItem(LS_TOKEN, tok);
+    setMsg("rt-msg","已保存到本设备","ok");
+    document.getElementById("rt-token").value="";
+    refreshTokenWarn();
+  }
+  async function clearToken(){
+    const adminPw = document.getElementById("rt-admin").value;
+    if (!(await checkPw(adminPw, AUTH_CFG.adminSalt, AUTH_CFG.adminHash))){ setMsg("rt-msg","管理员密码错误","err"); return; }
+    localStorage.removeItem(LS_TOKEN);
+    setMsg("rt-msg","已从本设备清除","ok");
+    refreshTokenWarn();
+  }
+
+  /* commit helpers */
+  function b64encUtf8(s){ return btoa(unescape(encodeURIComponent(s))); }
+  function b64decUtf8(s){ return decodeURIComponent(escape(atob(s.replace(/\s/g,"")))); }
+  async function ghGetFile(token){
+    const r = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${REPO_PATH}?ref=${REPO_BRANCH}`, { headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" } });
+    if (!r.ok) throw new Error("GitHub 读取失败 (" + r.status + ")");
+    return r.json();
+  }
+  async function ghPutFile(token, sha, newContent, message){
+    const r = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${REPO_PATH}`, {
+      method: "PUT",
+      headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+      body: JSON.stringify({ message, content: b64encUtf8(newContent), sha, branch: REPO_BRANCH })
+    });
+    if (!r.ok){ const t = await r.text(); throw new Error("GitHub 提交失败 (" + r.status + "): " + t.substring(0,120)); }
+    return r.json();
+  }
+  function rndSaltHex(n){ const a=new Uint8Array(n); crypto.getRandomValues(a); return Array.from(a).map(x=>x.toString(16).padStart(2,"0")).join(""); }
+
+  async function rotateSecret(kind){
+    const token = localStorage.getItem(LS_TOKEN);
+    if (!token){ return { ok:false, msg:"未配置 Token，请先到“Token 设置”完成配置" }; }
+    const file = await ghGetFile(token);
+    const orig = b64decUtf8(file.content);
+    const newSalt = rndSaltHex(8);
+    const cfgRegex = /const AUTH_CFG = \{[\s\S]*?\};/;
+    if (!cfgRegex.test(orig)) return { ok:false, msg:"未在源代码中找到 AUTH_CFG，不能自动修改" };
+    return { ok:true, token, file, orig, newSalt };
+  }
+
+  async function rotateView(){
+    setMsg("rv-msg","处理中…","info");
+    const adminPw = document.getElementById("rv-admin").value;
+    const newPw   = document.getElementById("rv-new").value;
+    const newPw2  = document.getElementById("rv-new2").value;
+    if (!(await checkPw(adminPw, AUTH_CFG.adminSalt, AUTH_CFG.adminHash))){ setMsg("rv-msg","管理员密码错误","err"); return; }
+    if (!newPw || newPw.length < 4){ setMsg("rv-msg","新查看密码至少 4 位","err"); return; }
+    if (newPw !== newPw2){ setMsg("rv-msg","两次输入不一致","err"); return; }
+    try {
+      const r = await rotateSecret("view"); if (!r.ok){ setMsg("rv-msg", r.msg, "err"); return; }
+      const newSalt = r.newSalt;
+      const newHash = await sha256Hex(newSalt + ":" + newPw);
+      const replaced = r.orig.replace(/viewSalt:\s*"[^"]*"/, `viewSalt: "${newSalt}"`).replace(/viewHash:\s*"[^"]*"/, `viewHash: "${newHash}"`);
+      await ghPutFile(r.token, r.file.sha, replaced, "rotate view password (via admin panel)");
+      setMsg("rv-msg","修改成功，Vercel 部署后生效·约 30–60 秒","ok");
+      AUTH_CFG.viewSalt = newSalt; AUTH_CFG.viewHash = newHash;
+      localStorage.removeItem(LS_UNLOCK);
+    } catch(e){ setMsg("rv-msg", e.message || String(e), "err"); }
+  }
+
+  async function rotateAdmin(){
+    setMsg("ra-msg","处理中…","info");
+    const cur = document.getElementById("ra-cur").value;
+    const newPw  = document.getElementById("ra-new").value;
+    const newPw2 = document.getElementById("ra-new2").value;
+    if (!(await checkPw(cur, AUTH_CFG.adminSalt, AUTH_CFG.adminHash))){ setMsg("ra-msg","当前管理员密码错误","err"); return; }
+    if (!newPw || newPw.length < 6){ setMsg("ra-msg","新管理员密码至少 6 位","err"); return; }
+    if (newPw !== newPw2){ setMsg("ra-msg","两次输入不一致","err"); return; }
+    try {
+      const r = await rotateSecret("admin"); if (!r.ok){ setMsg("ra-msg", r.msg, "err"); return; }
+      const newSalt = r.newSalt;
+      const newHash = await sha256Hex(newSalt + ":" + newPw);
+      const replaced = r.orig.replace(/adminSalt:\s*"[^"]*"/, `adminSalt: "${newSalt}"`).replace(/adminHash:\s*"[^"]*"/, `adminHash: "${newHash}"`);
+      await ghPutFile(r.token, r.file.sha, replaced, "rotate admin password (via admin panel)");
+      setMsg("ra-msg","修改成功，Vercel 部署后生效","ok");
+      AUTH_CFG.adminSalt = newSalt; AUTH_CFG.adminHash = newHash;
+    } catch(e){ setMsg("ra-msg", e.message || String(e), "err"); }
+  }
+
+  /* enter to submit on unlock input */
+  document.addEventListener("keydown", function(e){
+    if (e.key !== "Enter") return;
+    const u = document.getElementById("unlock-modal");
+    if (u && u.classList.contains("active")) { e.preventDefault(); submitUnlock(); }
+  });
+
 </script>
 </body>
 </html>
