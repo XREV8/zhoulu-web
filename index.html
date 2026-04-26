@@ -341,6 +341,71 @@
     .menu-text p { font-size: 11.5px; }
     .header h1 { font-size: 30px; letter-spacing: 4px; }
   }
+    /* ===== Brand entry chips (东南亚 > 更多酒店) ===== */
+    .service-box.brand-entry,
+    .service-box.hotel-entry {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .service-box.brand-entry:hover,
+    .service-box.brand-entry:active,
+    .service-box.hotel-entry:hover,
+    .service-box.hotel-entry:active {
+      border-color: rgba(255, 201, 74, 0.55);
+      background: rgba(255, 201, 74, 0.06);
+      transform: translateY(-1px);
+    }
+    .service-box.brand-entry strong,
+    .service-box.hotel-entry strong {
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+    .brand-arrow {
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+      opacity: 0.75;
+    }
+    /* ===== Calendar placeholder (三级页面) ===== */
+    .calendar-box {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    .calendar-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    .calendar-placeholder {
+      border: 1.5px dashed rgba(255, 201, 74, 0.35);
+      border-radius: 10px;
+      padding: 48px 16px;
+      text-align: center;
+      background: rgba(255, 201, 74, 0.03);
+    }
+    .calendar-placeholder-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    .calendar-placeholder-text {
+      font-size: 15px;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .calendar-placeholder-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
 </style>
 </head>
 <body>
@@ -419,6 +484,24 @@
       <div class="cta-icon">📲</div>
       <p>有需求欢迎私信 · 注明目的地 · 入住日期 · 房型需求</p>
     </div>
+    </div>
+    <div class="service-section">
+      <div class="service-title">更多酒店</div>
+      <div class="service-box brand-entry" onclick="show('hilton-list')">
+        <span class="icon">🏨</span>
+        <div><strong>希尔顿酒店精选</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box brand-entry" onclick="show('hyatt-list')">
+        <span class="icon">🏨</span>
+        <div><strong>凯悦酒店精选</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box brand-entry" onclick="show('dusit-list')">
+        <span class="icon">🏨</span>
+        <div><strong>都喜天丽酒店精选</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
     </div>
   </div>
 <!-- ANANTARA -->
@@ -761,6 +844,263 @@
       </div>
 
 
+  <!-- 希尔顿酒店精选 LIST -->
+  <div id="hilton-list" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('southeast-asia')">← 返回</div>
+      <div class="section-title">🏨 希尔顿酒店精选</div>
+      <div class="section-subtitle">点击酒店查看正月日历</div>
+    </div>
+    <div class="service-section">
+      <div class="service-box hotel-entry" onclick="show('hotel-conrad-bangkok')">
+        <span class="icon">🏡</span>
+        <div><strong>康莱德曼谷</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-waldorf-bangkok')">
+        <span class="icon">🏡</span>
+        <div><strong>华尔道夫曼谷</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-hilton-singapore-orchard')">
+        <span class="icon">🏡</span>
+        <div><strong>希尔顿新加坡乌节路</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL: 康莱德曼谷 -->
+  <div id="hotel-conrad-bangkok" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hilton-list')">← 返回 希尔顿酒店精选</div>
+      <div class="section-title">🏡 康莱德曼谷</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 华尔道夫曼谷 -->
+  <div id="hotel-waldorf-bangkok" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hilton-list')">← 返回 希尔顿酒店精选</div>
+      <div class="section-title">🏡 华尔道夫曼谷</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 希尔顿新加坡乌节路 -->
+  <div id="hotel-hilton-singapore-orchard" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hilton-list')">← 返回 希尔顿酒店精选</div>
+      <div class="section-title">🏡 希尔顿新加坡乌节路</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- 凯悦酒店精选 LIST -->
+  <div id="hyatt-list" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('southeast-asia')">← 返回</div>
+      <div class="section-title">🏨 凯悦酒店精选</div>
+      <div class="section-subtitle">点击酒店查看正月日历</div>
+    </div>
+    <div class="service-section">
+      <div class="service-box hotel-entry" onclick="show('hotel-park-hyatt-bangkok')">
+        <span class="icon">🏡</span>
+        <div><strong>曼谷柏悦酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-andaz-singapore')">
+        <span class="icon">🏡</span>
+        <div><strong>新加坡安达仕酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-grand-hyatt-kl')">
+        <span class="icon">🏡</span>
+        <div><strong>吉隆坡金凯酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL: 曼谷柏悦酒店 -->
+  <div id="hotel-park-hyatt-bangkok" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hyatt-list')">← 返回 凯悦酒店精选</div>
+      <div class="section-title">🏡 曼谷柏悦酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 新加坡安达仕酒店 -->
+  <div id="hotel-andaz-singapore" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hyatt-list')">← 返回 凯悦酒店精选</div>
+      <div class="section-title">🏡 新加坡安达仕酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 吉隆坡金凯酒店 -->
+  <div id="hotel-grand-hyatt-kl" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('hyatt-list')">← 返回 凯悦酒店精选</div>
+      <div class="section-title">🏡 吉隆坡金凯酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- 都喜天丽酒店精选 LIST -->
+  <div id="dusit-list" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('southeast-asia')">← 返回</div>
+      <div class="section-title">🏨 都喜天丽酒店精选</div>
+      <div class="section-subtitle">点击酒店查看正月日历</div>
+    </div>
+    <div class="service-section">
+      <div class="service-box hotel-entry" onclick="show('hotel-dusit-thani-bangkok')">
+        <span class="icon">🏡</span>
+        <div><strong>曼谷都喜天丽酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-dusit-thani-pattaya')">
+        <span class="icon">🏡</span>
+        <div><strong>芭蒂雅都喜天丽酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+      <div class="service-box hotel-entry" onclick="show('hotel-dusit-thani-maldives')">
+        <span class="icon">🏡</span>
+        <div><strong>马尔代夫都喜天丽酒店</strong></div>
+        <span class="brand-arrow">›</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL: 曼谷都喜天丽酒店 -->
+  <div id="hotel-dusit-thani-bangkok" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('dusit-list')">← 返回 都喜天丽酒店精选</div>
+      <div class="section-title">🏡 曼谷都喜天丽酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 芭蒂雅都喜天丽酒店 -->
+  <div id="hotel-dusit-thani-pattaya" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('dusit-list')">← 返回 都喜天丽酒店精选</div>
+      <div class="section-title">🏡 芭蒂雅都喜天丽酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
+
+  <!-- DETAIL: 马尔代夫都喜天丽酒店 -->
+  <div id="hotel-dusit-thani-maldives" class="section">
+    <div class="section-header">
+      <div class="back-btn" onclick="show('dusit-list')">← 返回 都喜天丽酒店精选</div>
+      <div class="section-title">🏡 马尔代夫都喜天丽酒店</div>
+      <div class="section-subtitle">正月日历</div>
+    </div>
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <div class="calendar-placeholder-icon">🗓️</div>
+        <div class="calendar-placeholder-text">正月日历 · 待上传</div>
+        <div class="calendar-placeholder-hint">该酒店的正月日历截图将在此显示</div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-icon">📲</div>
+      <p>需要预订请私信 · 注明入住日期 · 房型需求</p>
+    </div>
+  </div>
 </div>
 <script>
   function show(id) {
