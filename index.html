@@ -549,9 +549,46 @@
       line-height: 1.5;
     }
 
+    /* ===== Admin floating action button (小锁图标) ===== */
+    .admin-fab {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 201, 74, 0.18);
+      background: rgba(13, 30, 60, 0.55);
+      color: rgba(255, 201, 74, 0.55);
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 9000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0;
+      font-family: inherit;
+    }
+    .admin-fab:hover, .admin-fab:active {
+      color: var(--gold);
+      border-color: rgba(255, 201, 74, 0.55);
+      background: rgba(13, 30, 60, 0.85);
+      transform: scale(1.05);
+    }
+    @media (max-width: 480px) {
+      .admin-fab { top: 10px; right: 10px; width: 30px; height: 30px; font-size: 13px; }
+    }
+
 </style>
 </head>
 <body>
+  <!-- Admin floating button (仅图标，点击后进入管理员面板，什么都不会发生除非输入正确管理员密码) -->
+  <button type="button" class="admin-fab" onclick="openAdmin()" aria-label="管理员入口" title="管理员入口">🔑</button>
+
 <div class="container">
   <!-- HOME -->
   <div id="home">
