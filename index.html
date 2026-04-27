@@ -549,46 +549,40 @@
       line-height: 1.5;
     }
 
-    /* ===== Admin floating action button (小锁图标) ===== */
-    .admin-fab {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      width: 32px;
-      height: 32px;
+    /* ===== Admin inline key (仅在「更多酒店」标题旁) ===== */
+    .service-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .admin-key-inline {
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       border: 1px solid rgba(255, 201, 74, 0.18);
       background: rgba(13, 30, 60, 0.55);
-      color: rgba(255, 201, 74, 0.55);
-      font-size: 14px;
+      color: rgba(255, 201, 74, 0.45);
+      font-size: 12px;
       line-height: 1;
       cursor: pointer;
-      z-index: 9000;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       transition: all 0.2s ease;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       padding: 0;
       font-family: inherit;
+      flex-shrink: 0;
     }
-    .admin-fab:hover, .admin-fab:active {
+    .admin-key-inline:hover, .admin-key-inline:active {
       color: var(--gold);
       border-color: rgba(255, 201, 74, 0.55);
       background: rgba(13, 30, 60, 0.85);
-      transform: scale(1.05);
-    }
-    @media (max-width: 480px) {
-      .admin-fab { top: 10px; right: 10px; width: 30px; height: 30px; font-size: 13px; }
     }
 
 </style>
 </head>
 <body>
-  <!-- Admin floating button (仅图标，点击后进入管理员面板，什么都不会发生除非输入正确管理员密码) -->
-  <button type="button" class="admin-fab" onclick="openAdmin()" aria-label="管理员入口" title="管理员入口">🔑</button>
-
 <div class="container">
   <!-- HOME -->
   <div id="home">
@@ -662,7 +656,7 @@
     </div>
     </div>
     <div class="service-section">
-      <div class="service-title">更多酒店</div>
+      <div class="service-title-row"><div class="service-title">更多酒店</div><button type="button" class="admin-key-inline" onclick="event.stopPropagation();openAdmin()" aria-label="管理员入口" title="管理员入口">🔑</button></div>
       <div class="service-box brand-entry" onclick="tryUnlock('hilton-list')">
         <span class="icon">🏨</span>
         <div><strong>希尔顿酒店精选</strong></div>
